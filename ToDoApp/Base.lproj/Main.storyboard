@@ -1,24 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcL-EU-Cg5">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--To Do List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomePage" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-Ru-h7a">
+                                <rect key="frame" x="157" y="408.66666666666669" width="79" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DETAIL"/>
+                                <connections>
+                                    <action selector="buttonDetail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lmj-L7-vrN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fsv-Ru-h7a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHY-Ms-E9u"/>
+                            <constraint firstItem="fsv-Ru-h7a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eUl-8s-vb6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="To Do List" id="lou-xx-meU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="37g-Nq-0jg">
+                            <connections>
+                                <segue destination="cy8-lA-LiT" kind="show" id="gWO-dq-dIl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="p8x-77-ojL" kind="show" identifier="toDetail" id="V0A-3R-N6o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1002.2900763358779" y="-27.464788732394368"/>
+        </scene>
+        <!--Create a Task-->
+        <scene sceneID="Iem-h5-gYy">
+            <objects>
+                <viewController id="cy8-lA-LiT" customClass="CreateTaskPage" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gRp-Kg-N0z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6l9-J5-qTt">
+                                <rect key="frame" x="50" y="205" width="293" height="45.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwM-PF-Ywo">
+                                <rect key="frame" x="145.66666666666666" y="300.66666666666669" width="102" height="47.666666666666686"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SAVE">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonSave:" destination="cy8-lA-LiT" eventType="touchUpInside" id="RTS-jd-j7u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fMM-uA-b58"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6l9-J5-qTt" firstAttribute="top" secondItem="fMM-uA-b58" secondAttribute="top" constant="50" id="NQl-yj-hpi"/>
+                            <constraint firstItem="fMM-uA-b58" firstAttribute="trailing" secondItem="6l9-J5-qTt" secondAttribute="trailing" constant="50" id="O4X-6m-mmv"/>
+                            <constraint firstItem="zwM-PF-Ywo" firstAttribute="top" secondItem="6l9-J5-qTt" secondAttribute="bottom" constant="50" id="lq1-gl-du9"/>
+                            <constraint firstItem="zwM-PF-Ywo" firstAttribute="centerX" secondItem="gRp-Kg-N0z" secondAttribute="centerX" id="tjK-zC-49p"/>
+                            <constraint firstItem="6l9-J5-qTt" firstAttribute="leading" secondItem="fMM-uA-b58" secondAttribute="leading" constant="50" id="zsb-ZM-Mbq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a Task" id="v7B-6i-9eI"/>
+                    <connections>
+                        <outlet property="tfTaskName" destination="6l9-J5-qTt" id="sJ3-k3-orT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="li2-dp-5wy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912" y="-160"/>
+        </scene>
+        <!--Detail of Task-->
+        <scene sceneID="iIH-a7-FK1">
+            <objects>
+                <viewController id="p8x-77-ojL" customClass="TaskDetailPage" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MRQ-E7-z10">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1X3-4t-dU8">
+                                <rect key="frame" x="50" y="205" width="293" height="45.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-aV-aKr">
+                                <rect key="frame" x="145.66666666666666" y="300.66666666666669" width="102" height="48.666666666666686"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SAVE">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateButton:" destination="p8x-77-ojL" eventType="touchUpInside" id="hjQ-C7-Xir"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kqD-OX-hwy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1X3-4t-dU8" firstAttribute="top" secondItem="kqD-OX-hwy" secondAttribute="top" constant="50" id="15G-yP-HlD"/>
+                            <constraint firstItem="kqD-OX-hwy" firstAttribute="trailing" secondItem="1X3-4t-dU8" secondAttribute="trailing" constant="50" id="9GL-Qz-yBC"/>
+                            <constraint firstItem="DbJ-aV-aKr" firstAttribute="top" secondItem="1X3-4t-dU8" secondAttribute="bottom" constant="50" id="BSS-fz-Vhh"/>
+                            <constraint firstItem="DbJ-aV-aKr" firstAttribute="centerX" secondItem="MRQ-E7-z10" secondAttribute="centerX" id="BVp-Pp-Qpy"/>
+                            <constraint firstItem="1X3-4t-dU8" firstAttribute="leading" secondItem="kqD-OX-hwy" secondAttribute="leading" constant="50" id="Bw4-YX-dBr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail of Task" id="VIi-n2-sx8"/>
+                    <connections>
+                        <outlet property="tfTaskName" destination="1X3-4t-dU8" id="s6P-kv-Etz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUI-KU-yqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911" y="551"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MZX-QF-ayb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mcL-EU-Cg5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="n5x-mW-oFj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f9p-kf-lCN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhr-J9-ZJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
