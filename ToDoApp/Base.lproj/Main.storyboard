@@ -16,20 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-Ru-h7a">
-                                <rect key="frame" x="157" y="408.66666666666669" width="79" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="DETAIL"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-a1-De1">
+                                <rect key="frame" x="0.0" y="163" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="buttonDetail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lmj-L7-vrN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="K46-WN-wS3"/>
                                 </connections>
-                            </button>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bC7-0U-uUw">
+                                <rect key="frame" x="0.0" y="219.33333333333331" width="393" height="598.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="2t8-Cp-e1S" customClass="TasksCell" customModule="ToDoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2t8-Cp-e1S" id="dId-X5-Kud">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkC-Xm-Nrx">
+                                                    <rect key="frame" x="36" y="27" width="59" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nkC-Xm-Nrx" secondAttribute="bottom" constant="16" id="RAj-rk-Tqz"/>
+                                                <constraint firstItem="nkC-Xm-Nrx" firstAttribute="leading" secondItem="dId-X5-Kud" secondAttribute="leadingMargin" constant="16" id="SP4-47-tvL"/>
+                                                <constraint firstItem="nkC-Xm-Nrx" firstAttribute="top" secondItem="dId-X5-Kud" secondAttribute="topMargin" constant="16" id="k7O-CT-pJY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelTask" destination="nkC-Xm-Nrx" id="UGN-qm-fjv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fsv-Ru-h7a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHY-Ms-E9u"/>
-                            <constraint firstItem="fsv-Ru-h7a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eUl-8s-vb6"/>
+                            <constraint firstItem="cOt-a1-De1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FWH-sZ-Usx"/>
+                            <constraint firstItem="bC7-0U-uUw" firstAttribute="top" secondItem="cOt-a1-De1" secondAttribute="bottom" id="Y5j-ZN-b40"/>
+                            <constraint firstItem="bC7-0U-uUw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOj-Hh-smP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bC7-0U-uUw" secondAttribute="trailing" id="rSY-Cg-xNV"/>
+                            <constraint firstItem="cOt-a1-De1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wJQ-6j-L6d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bC7-0U-uUw" secondAttribute="bottom" id="xyT-vv-h84"/>
+                            <constraint firstItem="cOt-a1-De1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y3i-9p-KJl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" id="lou-xx-meU">
@@ -40,6 +74,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="cOt-a1-De1" id="FfG-w6-UOp"/>
+                        <outlet property="tasksTableView" destination="bC7-0U-uUw" id="VPx-xc-iuJ"/>
                         <segue destination="p8x-77-ojL" kind="show" identifier="toDetail" id="V0A-3R-N6o"/>
                     </connections>
                 </viewController>
@@ -56,12 +92,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6l9-J5-qTt">
-                                <rect key="frame" x="50" y="205" width="293" height="45.666666666666657"/>
+                                <rect key="frame" x="50" y="213.33333333333334" width="293" height="45.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwM-PF-Ywo">
-                                <rect key="frame" x="145.66666666666666" y="300.66666666666669" width="102" height="47.666666666666686"/>
+                                <rect key="frame" x="145.66666666666666" y="309" width="102" height="47.666666666666686"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SAVE">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
@@ -99,12 +135,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1X3-4t-dU8">
-                                <rect key="frame" x="50" y="205" width="293" height="45.666666666666657"/>
+                                <rect key="frame" x="50" y="213.33333333333334" width="293" height="45.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-aV-aKr">
-                                <rect key="frame" x="145.66666666666666" y="300.66666666666669" width="102" height="48.666666666666686"/>
+                                <rect key="frame" x="145.66666666666666" y="309" width="102" height="48.666666666666686"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SAVE">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
@@ -139,7 +175,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mcL-EU-Cg5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="n5x-mW-oFj">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
