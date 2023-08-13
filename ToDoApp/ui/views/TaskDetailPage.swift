@@ -11,6 +11,7 @@ class TaskDetailPage: UIViewController {
 
     @IBOutlet weak var tfTaskName: UITextField!
     var task : Tasks?
+    var viewModel =  TaskDetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         if let t = task {
@@ -20,11 +21,7 @@ class TaskDetailPage: UIViewController {
     
     @IBAction func updateButton(_ sender: Any) {
         if let tn = tfTaskName.text , let t = task {
-            update(id: t.id!, name: tn)
+            viewModel.update(id: t.id!, name: tn)
         }
-    }
-    
-    func update(id:Int , name: String) {
-        print("save task : \(id) - \(name) ")
     }
 }

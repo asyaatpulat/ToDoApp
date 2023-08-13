@@ -13,20 +13,21 @@ class HomePage: UIViewController {
     @IBOutlet weak var tasksTableView: UITableView!
     
     var tasks = [Tasks]()
-    
+    var viewModel = HomePageViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
         
-        let t1 = Tasks(id: 1, name: "yoga")
-        let t2 = Tasks(id: 2, name: "work")
-        let t3 = Tasks(id: 3, name: "gym")
-        tasks.append(t1)
-        tasks.append(t2)
-        tasks.append(t3)
-      
+        _ = viewModel.tasksList.subscribe(onNext: { list in
+            self.tasks = list
+            self .tasksTableView.reloadData()
+        })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadTasks()
     }
 
 
@@ -42,7 +43,7 @@ class HomePage: UIViewController {
 
 extension HomePage : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Search for task : \(searchText)")
+        viewModel.search(text: searchText)
     }
 }
 
@@ -75,8 +76,7 @@ extension HomePage : UITableViewDelegate , UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
-                print("Delete : \(task.id!)")
-
+                self.viewModel.delete(id: task.id!)
             }
             alert.addAction(yesAction)
             self.present(alert, animated: true)

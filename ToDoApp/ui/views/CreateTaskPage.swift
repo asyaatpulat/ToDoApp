@@ -10,6 +10,7 @@ import UIKit
 class CreateTaskPage: UIViewController {
 
     @IBOutlet weak var tfTaskName: UITextField!
+    var viewModel = CreateTaskViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,11 +18,7 @@ class CreateTaskPage: UIViewController {
     
     @IBAction func buttonSave(_ sender: Any) {
         if let tn = tfTaskName.text {
-            save(name: tn)
+            viewModel.save(name: tn)
         }
-    }
-    
-    func save(name: String) {
-        print("save task : \(name) ")
     }
 }

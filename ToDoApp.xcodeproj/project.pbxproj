@@ -17,6 +17,11 @@
 		22B23BF62A7AF2230043803C /* TaskDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BF52A7AF2230043803C /* TaskDetailPage.swift */; };
 		22B23BF82A7AF5D20043803C /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BF72A7AF5D20043803C /* Tasks.swift */; };
 		22B23BFE2A8052590043803C /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BFD2A8052590043803C /* TasksCell.swift */; };
+		22E6D4472A8977DC00BAC22A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 22E6D4462A8977DC00BAC22A /* RxSwift */; };
+		22E6D44A2A89783800BAC22A /* TasksDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6D4492A89783800BAC22A /* TasksDaoRepository.swift */; };
+		22E6D44D2A89786800BAC22A /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6D44C2A89786800BAC22A /* HomePageViewModel.swift */; };
+		22E6D44F2A89788200BAC22A /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6D44E2A89788200BAC22A /* CreateTaskViewModel.swift */; };
+		22E6D4512A89789100BAC22A /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6D4502A89789100BAC22A /* TaskDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,10 @@
 		22B23BF52A7AF2230043803C /* TaskDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPage.swift; sourceTree = "<group>"; };
 		22B23BF72A7AF5D20043803C /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		22B23BFD2A8052590043803C /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
+		22E6D4492A89783800BAC22A /* TasksDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDaoRepository.swift; sourceTree = "<group>"; };
+		22E6D44C2A89786800BAC22A /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010HomePageViewModel.swift"; sourceTree = "<group>"; };
+		22E6D44E2A89788200BAC22A /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
+		22E6D4502A89789100BAC22A /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E6D4472A8977DC00BAC22A /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,7 @@
 		22209FD22A7ADC2F0017776D /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				22E6D44B2A89784F00BAC22A /* viewmodel */,
 				22B23BFC2A8052430043803C /* tableview */,
 				22209FD32A7ADC390017776D /* views */,
 			);
@@ -98,6 +109,7 @@
 		22209FD42A7ADC460017776D /* data */ = {
 			isa = PBXGroup;
 			children = (
+				22E6D4482A89781700BAC22A /* repo */,
 				22209FD52A7ADC4E0017776D /* entity */,
 			);
 			path = data;
@@ -119,6 +131,24 @@
 			path = tableview;
 			sourceTree = "<group>";
 		};
+		22E6D4482A89781700BAC22A /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				22E6D4492A89783800BAC22A /* TasksDaoRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		22E6D44B2A89784F00BAC22A /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				22E6D44C2A89786800BAC22A /* HomePageViewModel.swift */,
+				22E6D44E2A89788200BAC22A /* CreateTaskViewModel.swift */,
+				22E6D4502A89789100BAC22A /* TaskDetailViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +165,9 @@
 			dependencies = (
 			);
 			name = ToDoApp;
+			packageProductDependencies = (
+				22E6D4462A8977DC00BAC22A /* RxSwift */,
+			);
 			productName = ToDoApp;
 			productReference = 22209FBB2A7ADBE70017776D /* ToDoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 22209FB22A7ADBE70017776D;
+			packageReferences = (
+				22E6D4452A8977DC00BAC22A /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 22209FBC2A7ADBE70017776D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,9 +228,13 @@
 			files = (
 				22B23BF62A7AF2230043803C /* TaskDetailPage.swift in Sources */,
 				22B23BFE2A8052590043803C /* TasksCell.swift in Sources */,
+				22E6D44F2A89788200BAC22A /* CreateTaskViewModel.swift in Sources */,
 				22209FC32A7ADBE70017776D /* HomePage.swift in Sources */,
+				22E6D4512A89789100BAC22A /* TaskDetailViewModel.swift in Sources */,
+				22E6D44D2A89786800BAC22A /* HomePageViewModel.swift in Sources */,
 				22209FBF2A7ADBE70017776D /* AppDelegate.swift in Sources */,
 				22209FC12A7ADBE70017776D /* SceneDelegate.swift in Sources */,
+				22E6D44A2A89783800BAC22A /* TasksDaoRepository.swift in Sources */,
 				22B23BF82A7AF5D20043803C /* Tasks.swift in Sources */,
 				22B23BF32A7AF0700043803C /* CreateTaskPage.swift in Sources */,
 			);
@@ -414,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22E6D4452A8977DC00BAC22A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22E6D4462A8977DC00BAC22A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E6D4452A8977DC00BAC22A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22209FB32A7ADBE70017776D /* Project object */;
 }
