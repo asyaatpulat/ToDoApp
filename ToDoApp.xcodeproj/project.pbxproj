@@ -13,6 +13,12 @@
 		22209FC62A7ADBE70017776D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22209FC42A7ADBE70017776D /* Main.storyboard */; };
 		22209FC82A7ADBEB0017776D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22209FC72A7ADBEB0017776D /* Assets.xcassets */; };
 		22209FCB2A7ADBEB0017776D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22209FC92A7ADBEB0017776D /* LaunchScreen.storyboard */; };
+		224C34F52A8E558200C232A1 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C34EB2A8E557F00C232A1 /* FMDatabasePool.m */; };
+		224C34F62A8E558200C232A1 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C34EC2A8E558000C232A1 /* FMDatabaseAdditions.m */; };
+		224C34F72A8E558200C232A1 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C34EE2A8E558000C232A1 /* FMDatabaseQueue.m */; };
+		224C34F82A8E558200C232A1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C34F22A8E558100C232A1 /* FMResultSet.m */; };
+		224C34F92A8E558200C232A1 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C34F32A8E558200C232A1 /* FMDatabase.m */; };
+		224C35032A8E5D4100C232A1 /* tasks.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 224C35022A8E5D4100C232A1 /* tasks.sqlite */; };
 		22B23BF32A7AF0700043803C /* CreateTaskPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BF22A7AF0700043803C /* CreateTaskPage.swift */; };
 		22B23BF62A7AF2230043803C /* TaskDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BF52A7AF2230043803C /* TaskDetailPage.swift */; };
 		22B23BF82A7AF5D20043803C /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B23BF72A7AF5D20043803C /* Tasks.swift */; };
@@ -33,6 +39,20 @@
 		22209FC72A7ADBEB0017776D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22209FCA2A7ADBEB0017776D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22209FCC2A7ADBEB0017776D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224C34E82A8E555800C232A1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		224C34E92A8E557E00C232A1 /* ToDoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		224C34EA2A8E557F00C232A1 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		224C34EB2A8E557F00C232A1 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		224C34EC2A8E558000C232A1 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		224C34ED2A8E558000C232A1 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		224C34EE2A8E558000C232A1 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		224C34EF2A8E558100C232A1 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		224C34F02A8E558100C232A1 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		224C34F12A8E558100C232A1 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		224C34F22A8E558100C232A1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		224C34F32A8E558200C232A1 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		224C34F42A8E558200C232A1 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		224C35022A8E5D4100C232A1 /* tasks.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = tasks.sqlite; sourceTree = "<group>"; };
 		22B23BF22A7AF0700043803C /* CreateTaskPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskPage.swift; sourceTree = "<group>"; };
 		22B23BF52A7AF2230043803C /* TaskDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPage.swift; sourceTree = "<group>"; };
 		22B23BF72A7AF5D20043803C /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
@@ -60,6 +80,7 @@
 			children = (
 				22209FBD2A7ADBE70017776D /* ToDoApp */,
 				22209FBC2A7ADBE70017776D /* Products */,
+				224C34E72A8E555800C232A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +103,19 @@
 				22209FC72A7ADBEB0017776D /* Assets.xcassets */,
 				22209FC92A7ADBEB0017776D /* LaunchScreen.storyboard */,
 				22209FCC2A7ADBEB0017776D /* Info.plist */,
+				224C35022A8E5D4100C232A1 /* tasks.sqlite */,
+				224C34F42A8E558200C232A1 /* FMDatabase.h */,
+				224C34F32A8E558200C232A1 /* FMDatabase.m */,
+				224C34F12A8E558100C232A1 /* FMDatabaseAdditions.h */,
+				224C34EC2A8E558000C232A1 /* FMDatabaseAdditions.m */,
+				224C34EA2A8E557F00C232A1 /* FMDatabasePool.h */,
+				224C34EB2A8E557F00C232A1 /* FMDatabasePool.m */,
+				224C34ED2A8E558000C232A1 /* FMDatabaseQueue.h */,
+				224C34EE2A8E558000C232A1 /* FMDatabaseQueue.m */,
+				224C34EF2A8E558100C232A1 /* FMDB.h */,
+				224C34F02A8E558100C232A1 /* FMResultSet.h */,
+				224C34F22A8E558100C232A1 /* FMResultSet.m */,
+				224C34E92A8E557E00C232A1 /* ToDoApp-Bridging-Header.h */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -121,6 +155,14 @@
 				22B23BF72A7AF5D20043803C /* Tasks.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		224C34E72A8E555800C232A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				224C34E82A8E555800C232A1 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		22B23BFC2A8052430043803C /* tableview */ = {
@@ -184,6 +226,7 @@
 				TargetAttributes = {
 					22209FBA2A7ADBE70017776D = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -215,6 +258,7 @@
 			files = (
 				22209FCB2A7ADBEB0017776D /* LaunchScreen.storyboard in Resources */,
 				22209FC82A7ADBEB0017776D /* Assets.xcassets in Resources */,
+				224C35032A8E5D4100C232A1 /* tasks.sqlite in Resources */,
 				22209FC62A7ADBE70017776D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,16 +271,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B23BF62A7AF2230043803C /* TaskDetailPage.swift in Sources */,
+				224C34F52A8E558200C232A1 /* FMDatabasePool.m in Sources */,
 				22B23BFE2A8052590043803C /* TasksCell.swift in Sources */,
+				224C34F72A8E558200C232A1 /* FMDatabaseQueue.m in Sources */,
 				22E6D44F2A89788200BAC22A /* CreateTaskViewModel.swift in Sources */,
 				22209FC32A7ADBE70017776D /* HomePage.swift in Sources */,
 				22E6D4512A89789100BAC22A /* TaskDetailViewModel.swift in Sources */,
 				22E6D44D2A89786800BAC22A /* HomePageViewModel.swift in Sources */,
 				22209FBF2A7ADBE70017776D /* AppDelegate.swift in Sources */,
+				224C34F82A8E558200C232A1 /* FMResultSet.m in Sources */,
+				224C34F62A8E558200C232A1 /* FMDatabaseAdditions.m in Sources */,
 				22209FC12A7ADBE70017776D /* SceneDelegate.swift in Sources */,
 				22E6D44A2A89783800BAC22A /* TasksDaoRepository.swift in Sources */,
 				22B23BF82A7AF5D20043803C /* Tasks.swift in Sources */,
 				22B23BF32A7AF0700043803C /* CreateTaskPage.swift in Sources */,
+				224C34F92A8E558200C232A1 /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G8FFKF9HW5;
@@ -399,6 +449,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.info.ToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoApp/ToDoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G8FFKF9HW5;
@@ -427,6 +480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.info.ToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoApp/ToDoApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

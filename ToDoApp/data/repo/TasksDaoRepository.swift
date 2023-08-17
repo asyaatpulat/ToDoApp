@@ -10,31 +10,84 @@ import RxSwift
 
 class TasksDaoRepository {
     var tasksList = BehaviorSubject<[Tasks]>(value: [Tasks]())
+    let db:FMDatabase?
+    
+    init(){
+        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let databaseURL = URL(fileURLWithPath: filePath).appendingPathComponent("tasks.sqlite")
+        db = FMDatabase(path: databaseURL.path)
+    }
     func save(name: String) {
-        print("save task : \(name) ")
+        db?.open()
+        do{
+            try db!.executeUpdate("INSERT INTO tasks (name) VALUES (?)", values: [name])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func update(id:Int , name: String) {
-        print("save task : \(id) - \(name) ")
+        db?.open()
+        do{
+            try db!.executeUpdate("UPDATE tasks SET name = ? WHERE id = ?", values: [ name ,id])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
+        
     }
     
     func delete (id: Int) {
-        print("Delete : \(id)")
+        db?.open()
+        do{
+            try db!.executeUpdate("DELETE FROM tasks WHERE id = ?", values: [id])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
+        
     }
     
     func search (text : String){
-        print("Search for task : \(text)")
+        db?.open()
+        var list = [Tasks]()
+        
+        do{
+            let result = try db!.executeQuery("SELECT * FROM tasks WHERE name like '%\(text)%'", values: nil)
+            while result.next() {
+                let id = Int(result.string(forColumn: "id") )!
+                let name = result.string(forColumn: "name")!
+                let tasks = Tasks(id: id, name: name)
+                
+                list.append(tasks)
+            }
+            tasksList.onNext(list)
+
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func loadTasks(){
+        db?.open()
         var list = [Tasks]()
-        let t1 = Tasks(id: 1, name: "yoga")
-        let t2 = Tasks(id: 2, name: "work")
-        let t3 = Tasks(id: 3, name: "gym")
-        list.append(t1)
-        list.append(t2)
-        list.append(t3)
-        tasksList.onNext(list)
-      
+        
+        do{
+            let result = try db!.executeQuery("SELECT * FROM tasks", values: nil)
+            while result.next() {
+                let id = Int(result.string(forColumn: "id") )!
+                let name = result.string(forColumn: "name")!
+                let tasks = Tasks(id: id, name: name)
+                list.append(tasks)
+            }
+            tasksList.onNext(list)
+
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
+        
     }
 }
